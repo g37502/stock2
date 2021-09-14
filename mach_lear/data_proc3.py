@@ -118,12 +118,6 @@ def data_operation(file1,file2,file3,file4):
 			b2.assign_sub(lr * grads[3])
 			w3.assign_sub(lr * grads[4])
 			b3.assign_sub(lr * grads[5])
-			logger.debug(111111,w1.shape)
-			logger.debug('b1',b1.shape)
-			logger.debug('w2',w2.shape)
-			logger.debug('b2',b2.shape)
-			logger.debug('w3',w3.shape)
-			logger.debug('b3',b3.shape)
 			if step % 100 == 0:
 				logger.info('%s, %s, loss:, %s' % (epoch, step, float(loss)))
 				# pd.DataFrame.to_csv('test.cvs',[w1,b1,w2,b2,w3,b3],)
@@ -155,6 +149,7 @@ def data_operation(file1,file2,file3,file4):
 		acc = total_correct / total_num
 		logger.info('test acc: %s' % acc)
 		accuracy=config_h.get_float('mach_lear','accuracy')
+		acc=float(acc)
 		if acc > accuracy:
 			dir = str((int(time.time())))
 			logger.debug(type(w1))
