@@ -1,0 +1,38 @@
+radis set
+tick_task 需要获取的逐笔成交的代码集合"601609.SH:2020-04-22"改为"sh.000007:2020-07-22"
+exit_original_task 已经获取过的逐笔成交代码集合,作废
+limit_task需要生成数据文件的limit代码集合
+usually_task 需要生成数据文件的普通代码集合
+task_completed 已经生成数据文件的代码集合
+tick_task_completed 已经获取过的逐笔成交代码集合
+
+
+
+rk_makn.py 将逐笔成交明细写入数据库
+sh.000007:2020-07-22改为sh600003
+运行命令
+python rk_makn.py 'tick_task'
+
+
+data_operation_main.py
+计算出模型，并打印，并检测测试数据
+
+4个数据文件为普通数据 涨停数据 普通数据 涨停数据
+运行命令 python data_operation_main.py file1 file2 file3 file4
+
+tensorflow           1.13.1
+
+
+写入文件
+1、发布任务
+python task_push_main.py limit_task
+>python task_push_main.py usually_task
+2、写入文件
+
+python  data_write_main.py usually_task_test
+python  data_write_main.py usually_task
+python  data_write_main.py limit_task_test
+python  data_write_main.py limit_task
+
+
+
