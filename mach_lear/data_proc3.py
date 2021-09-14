@@ -154,7 +154,8 @@ def data_operation(file1,file2,file3,file4):
 		# logger.debug(type(total_correct),type(total_num))
 		acc = total_correct / total_num
 		logger.info('test acc: %s' % acc)
-		if acc > 0.9:
+		accuracy=config_h.get_float('mach_lear','accuracy')
+		if acc > accuracy:
 			dir = str((int(time.time())))
 			logger.debug(type(w1))
 			save_mode(dir, w1,b1, w2, b2, w3, b3)
