@@ -7,6 +7,11 @@
 @desc:
 '''
 # import lib
+import os
+import tensorflow as tf
+
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 from tools.config import config_h
 from mach_lear.operdata import output
 if __name__ == '__main__':

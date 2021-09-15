@@ -131,8 +131,12 @@ def data_operation(file1,file2,file3,file4):
 			out = h2@w3 + b3
 			print('out是:',out)
 			prob = tf.nn.softmax(out, axis=1)
+			print('prob是:',prob)
 			pred = tf.argmax(prob,axis=1)
+			print('pred是：',pred)
 			pred = tf.cast(pred, dtype=tf.int32)
+			print('pred2是：',pred)
+			print('y是:',y)
 			# logger.debug('这个是pred2：',pred)
 			# y: [b]
 			# [b], int32
