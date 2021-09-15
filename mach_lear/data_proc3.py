@@ -129,6 +129,7 @@ def data_operation(file1,file2,file3,file4):
 			h1 = eval(f'tf.nn.{func}(x@w1 + b1)')
 			h2 = eval(f'tf.nn.{func}(h1@w2 + b2)')
 			out = h2@w3 + b3
+			print('out是:',out)
 			prob = tf.nn.softmax(out, axis=1)
 			pred = tf.argmax(prob,axis=1)
 			pred = tf.cast(pred, dtype=tf.int32)
