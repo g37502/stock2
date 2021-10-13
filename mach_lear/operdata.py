@@ -50,6 +50,7 @@ def output(path_model,path_file):
 
 	func = config_h.get_config('mach_lear', 'func')
 	for x in nuar_test:
+		print('平均数:',tf.reduce_mean(x))
 
 		x = tf.reshape(x, [1, 14280])
 		print(x.shape)

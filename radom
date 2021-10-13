@@ -23,6 +23,9 @@ data_operation_main.py
 tensorflow           1.13.1
 
 
+scl enable devtoolset-7 bashf
+进入gcc7.3
+
 写入文件
 1、发布任务
 python task_push_main.py limit_task
